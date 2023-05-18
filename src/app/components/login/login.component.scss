@@ -1,0 +1,38 @@
+
+.img{
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url("../../../assets/images\ \(1\).jpeg")  ;
+  background-repeat:no-repeat ;
+  background-position: center;
+  background-size: cover ;
+  height: 80vh;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 48.5%;
+}
+
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+

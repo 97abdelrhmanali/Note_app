@@ -1,0 +1,47 @@
+<section class="min-vh-100 d-flex justify-content-center align-items-center">
+  <div class="row g-0 shadow rounded overflow-hidden w-100 align-items-center">
+      <div class="col-md-8 d-none d-md-block">
+          <div class="img"></div>
+      </div>
+      <div class="col-md-4">
+        <form class="px-4" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+          <h1 class="text-center display-1 mb-3" style="font-weight: bold;">
+          <span style="color: cadetblue;">L</span>ogin</h1>
+
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" type="text" matInput placeholder="Ex. @yahoo.com">
+
+            <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+              email is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+              email is <strong>Invalid pattern</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+
+
+
+
+          <button [disabled]="loginForm.invalid" class="w-100" mat-raised-button color="primary">Login</button>
+
+
+        </form>
+      </div>
+  </div>
+</section>
+
